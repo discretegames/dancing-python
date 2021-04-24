@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>Dancing Python</title>
+	<style>
+		:root {
+			--bg: #111;
+			--blue0: #387eb8;
+			--blue1: #366994;
+			--yellow0: #ffe052;
+			--yellow1: #ffc331;
+			--duration: 1.7s;
+			--scale: 0.6;
+		}
+
+		body {
+			background-color: var(--bg);
+		}
+
+		svg,
+		stop {
+			animation-duration: var(--duration);
+			animation-iteration-count: infinite;
+			animation-timing-function: ease-in-out;
+		}
+
+		#logo {
+			position: absolute;
+			margin: auto;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			animation-name: beat;
+		}
+
+		@keyframes beat {
+			0% {
+				transform: scale(1);
+			}
+
+			25% {
+				transform: scale(var(--scale));
+			}
+
+			50% {
+				transform: scale(1);
+			}
+
+			75% {
+				transform: scale(var(--scale)) rotate(0deg);
+			}
+
+			100% {
+				transform: scale(1) rotate(360deg);
+			}
+		}
+
+		#blue0 {
+			stop-color: var(--blue0);
+			animation-name: blue0;
+		}
+
+		@keyframes blue0 {
+			25% {
+				stop-color: var(--yellow0);
+			}
+
+			50% {
+				stop-color: var(--blue0);
+			}
+
+			75% {
+				stop-color: var(--yellow0);
+			}
+		}
+
+		#blue1 {
+			stop-color: var(--blue1);
+			animation-name: blue1;
+		}
+
+		@keyframes blue1 {
+			25% {
+				stop-color: var(--yellow1);
+			}
+
+			50% {
+				stop-color: var(--blue1);
+			}
+
+			75% {
+				stop-color: var(--yellow1);
+			}
+		}
+
+		#yellow0 {
+			stop-color: var(--yellow0);
+			animation-name: yellow0;
+		}
+
+		@keyframes yellow0 {
+			25% {
+				stop-color: var(--blue0);
+			}
+
+			50% {
+				stop-color: var(--yellow0);
+			}
+
+			75% {
+				stop-color: var(--blue0);
+			}
+		}
+
+		#yellow1 {
+			stop-color: var(--yellow1);
+			animation-name: yellow1;
+		}
+
+		@keyframes yellow1 {
+			25% {
+				stop-color: var(--blue1);
+			}
+
+			50% {
+				stop-color: var(--yellow1);
+			}
+
+			75% {
+				stop-color: var(--blue1);
+			}
+		}
+	</style>
+</head>
+
+<body>
+	<!-- Modified from https://commons.wikimedia.org/wiki/File:Python-logo-notext.svg -->
+	<svg id="logo" width="200" viewBox="0 0 110.4211 109.8461">
+		<defs>
+			<linearGradient id="blue" gradientUnits="userSpaceOnUse" y2="131.85291" x2="110.14919" y1="77.070274"
+				x1="55.549179">
+				<stop id="blue0" offset="0" />
+				<stop id="blue1" offset="1" />
+			</linearGradient>
+			<linearGradient id="yellow" gradientUnits="userSpaceOnUse" y2="168.1012" x2="147.77737" y1="111.92053"
+				x1="89.136749">
+				<stop id="yellow0" offset="0" />
+				<stop id="yellow1" offset="1" />
+			</linearGradient>
+		</defs>
+		<g transform="translate(-44.9375,-67.46875)">
+			<path
+				style="opacity:1;color:#000000;fill:url(#blue);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+				d="M 99.75,67.46875 C 71.718268,67.468752 73.46875,79.625 73.46875,79.625 L 73.5,92.21875 L 100.25,92.21875 L 100.25,96 L 62.875,96 C 62.875,96 44.9375,93.965724 44.9375,122.25 C 44.937498,150.53427 60.59375,149.53125 60.59375,149.53125 L 69.9375,149.53125 L 69.9375,136.40625 C 69.9375,136.40625 69.433848,120.75 85.34375,120.75 C 101.25365,120.75 111.875,120.75 111.875,120.75 C 111.875,120.75 126.78125,120.99096 126.78125,106.34375 C 126.78125,91.696544 126.78125,82.125 126.78125,82.125 C 126.78125,82.124998 129.04443,67.46875 99.75,67.46875 z M 85,75.9375 C 87.661429,75.937498 89.8125,78.088571 89.8125,80.75 C 89.812502,83.411429 87.661429,85.5625 85,85.5625 C 82.338571,85.562502 80.1875,83.411429 80.1875,80.75 C 80.187498,78.088571 82.338571,75.9375 85,75.9375 z " />
+			<path
+				style="opacity:1;color:#000000;fill:url(#yellow);fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1;stroke-linecap:butt;stroke-linejoin:miter;marker:none;marker-start:none;marker-mid:none;marker-end:none;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;visibility:visible;display:inline;overflow:visible"
+				d="M 100.5461,177.31485 C 128.57784,177.31485 126.82735,165.1586 126.82735,165.1586 L 126.7961,152.56485 L 100.0461,152.56485 L 100.0461,148.7836 L 137.4211,148.7836 C 137.4211,148.7836 155.3586,150.81787 155.3586,122.53359 C 155.35861,94.249323 139.70235,95.252343 139.70235,95.252343 L 130.3586,95.252343 L 130.3586,108.37734 C 130.3586,108.37734 130.86226,124.03359 114.95235,124.03359 C 99.042448,124.03359 88.421098,124.03359 88.421098,124.03359 C 88.421098,124.03359 73.514848,123.79263 73.514848,138.43985 C 73.514848,153.08705 73.514848,162.6586 73.514848,162.6586 C 73.514848,162.6586 71.251668,177.31485 100.5461,177.31485 z M 115.2961,168.8461 C 112.63467,168.8461 110.4836,166.69503 110.4836,164.0336 C 110.4836,161.37217 112.63467,159.2211 115.2961,159.2211 C 117.95753,159.2211 120.1086,161.37217 120.1086,164.0336 C 120.10861,166.69503 117.95753,168.8461 115.2961,168.8461 z " />
+		</g>
+	</svg>
+</body>
+
+</html>
